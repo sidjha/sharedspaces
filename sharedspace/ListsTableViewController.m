@@ -17,11 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // TODO: add in ability to switch sharedspace
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +45,10 @@
     
     UILabel *label = (UILabel *)[cell viewWithTag:0];
     label.text = @"Some list some list some list";
+    
+    // TODO: make these cells links to the actual list
+    // TODO: Why isn't the font bold?
+    
     
     return cell;
 }

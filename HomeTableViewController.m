@@ -17,16 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     self.sharedspaces = [NSArray arrayWithObjects:
                               @[@"Tom", @"Dick", @"Harry"],
                               @[@"Kim", @"Kylie", @"Kourtney"],
                              @[@"Barack", @"George", @"Donald"], nil];
+    
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
     
 }
 
@@ -61,7 +59,7 @@
     // like @[@"Tom", @"Dick", @"Harry"] --> "Sharedspace with Tom, Dick and Harry]
     
     label.text = @"Sharedspace with Tom, Dick and Harry";
-    
+
     return cell;
 }
 

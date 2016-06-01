@@ -16,6 +16,7 @@
 		EB7FCC881CFF303000E1B21F /* sharedspaceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC871CFF303000E1B21F /* sharedspaceUITests.m */; };
 		EB7FCC9A1CFF33E400E1B21F /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC991CFF33E400E1B21F /* HomeTableViewController.m */; };
 		EB7FCC9D1CFF414C00E1B21F /* ListsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC9C1CFF414C00E1B21F /* ListsTableViewController.m */; };
+		EB7FCCA01CFF53BA00E1B21F /* EditListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC9F1CFF53BA00E1B21F /* EditListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		EB7FCC991CFF33E400E1B21F /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeTableViewController.m; path = ../HomeTableViewController.m; sourceTree = "<group>"; };
 		EB7FCC9B1CFF414C00E1B21F /* ListsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsTableViewController.h; sourceTree = "<group>"; };
 		EB7FCC9C1CFF414C00E1B21F /* ListsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsTableViewController.m; sourceTree = "<group>"; };
+		EB7FCC9E1CFF53BA00E1B21F /* EditListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditListViewController.h; sourceTree = "<group>"; };
+		EB7FCC9F1CFF53BA00E1B21F /* EditListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				EB7FCC6B1CFF303000E1B21F /* Main.storyboard */,
 				EB7FCC9B1CFF414C00E1B21F /* ListsTableViewController.h */,
 				EB7FCC9C1CFF414C00E1B21F /* ListsTableViewController.m */,
+				EB7FCC9E1CFF53BA00E1B21F /* EditListViewController.h */,
+				EB7FCC9F1CFF53BA00E1B21F /* EditListViewController.m */,
 				EB7FCC6E1CFF303000E1B21F /* Assets.xcassets */,
 				EB7FCC701CFF303000E1B21F /* LaunchScreen.storyboard */,
 				EB7FCC731CFF303000E1B21F /* Info.plist */,
@@ -276,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB7FCC671CFF303000E1B21F /* AppDelegate.m in Sources */,
+				EB7FCCA01CFF53BA00E1B21F /* EditListViewController.m in Sources */,
 				EB7FCC9A1CFF33E400E1B21F /* HomeTableViewController.m in Sources */,
 				EB7FCC641CFF303000E1B21F /* main.m in Sources */,
 				EB7FCC9D1CFF414C00E1B21F /* ListsTableViewController.m in Sources */,
