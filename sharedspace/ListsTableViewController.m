@@ -1,18 +1,18 @@
 //
-//  HomeTableViewController.m
+//  ListsTableViewController.m
 //  sharedspace
 //
 //  Created by Sid Jha on 2016-06-01.
 //  Copyright © 2016 Mesh8. All rights reserved.
 //
 
-#import "HomeTableViewController.h"
+#import "ListsTableViewController.h"
 
-@interface HomeTableViewController ()
+@interface ListsTableViewController ()
 
 @end
 
-@implementation HomeTableViewController
+@implementation ListsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,12 +22,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.sharedspaces = [NSArray arrayWithObjects:
-                              @[@"Tom", @"Dick", @"Harry"],
-                              @[@"Kim", @"Kylie", @"Kourtney"],
-                             @[@"Barack", @"George", @"Donald"], nil];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,25 +36,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
     return 3;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SharedspaceItem" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listsItem" forIndexPath:indexPath];
     
-    // Configure the cell...
-    
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:0];
-    imageView.frame = CGRectMake(0, 0, 30, 30);
-    imageView.image = [UIImage imageNamed:@"ss_avatar"];
-    
-    UILabel *label = (UILabel *)[cell viewWithTag:1];
-    
-    // shuffle through sharedspace array and make strings out of each item,
-    // like @[@"Tom", @"Dick", @"Harry"] --> "Sharedspace with Tom, Dick and Harry]
-    
-    label.text = @"Sharedspace with Tom, Dick and Harry";
+    UILabel *label = (UILabel *)[cell viewWithTag:0];
+    label.text = @"Some list some list some list";
     
     return cell;
 }

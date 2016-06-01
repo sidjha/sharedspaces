@@ -15,6 +15,7 @@
 		EB7FCC7D1CFF303000E1B21F /* sharedspaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC7C1CFF303000E1B21F /* sharedspaceTests.m */; };
 		EB7FCC881CFF303000E1B21F /* sharedspaceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC871CFF303000E1B21F /* sharedspaceUITests.m */; };
 		EB7FCC9A1CFF33E400E1B21F /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC991CFF33E400E1B21F /* HomeTableViewController.m */; };
+		EB7FCC9D1CFF414C00E1B21F /* ListsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC9C1CFF414C00E1B21F /* ListsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		EB7FCC891CFF303000E1B21F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB7FCC981CFF33E400E1B21F /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeTableViewController.h; path = ../HomeTableViewController.h; sourceTree = "<group>"; };
 		EB7FCC991CFF33E400E1B21F /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeTableViewController.m; path = ../HomeTableViewController.m; sourceTree = "<group>"; };
+		EB7FCC9B1CFF414C00E1B21F /* ListsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsTableViewController.h; sourceTree = "<group>"; };
+		EB7FCC9C1CFF414C00E1B21F /* ListsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				EB7FCC981CFF33E400E1B21F /* HomeTableViewController.h */,
 				EB7FCC991CFF33E400E1B21F /* HomeTableViewController.m */,
 				EB7FCC6B1CFF303000E1B21F /* Main.storyboard */,
+				EB7FCC9B1CFF414C00E1B21F /* ListsTableViewController.h */,
+				EB7FCC9C1CFF414C00E1B21F /* ListsTableViewController.m */,
 				EB7FCC6E1CFF303000E1B21F /* Assets.xcassets */,
 				EB7FCC701CFF303000E1B21F /* LaunchScreen.storyboard */,
 				EB7FCC731CFF303000E1B21F /* Info.plist */,
@@ -273,6 +278,7 @@
 				EB7FCC671CFF303000E1B21F /* AppDelegate.m in Sources */,
 				EB7FCC9A1CFF33E400E1B21F /* HomeTableViewController.m in Sources */,
 				EB7FCC641CFF303000E1B21F /* main.m in Sources */,
+				EB7FCC9D1CFF414C00E1B21F /* ListsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
