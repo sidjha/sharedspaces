@@ -148,24 +148,32 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7X-tP-vth">
                                 <rect key="frame" x="80" y="74" width="47" height="30"/>
                                 <state key="normal" title="Bullets"/>
+                                <connections>
+                                    <action selector="bulletsTapped:" destination="xHI-J9-V0D" eventType="touchUpInside" id="FX0-0p-mCt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJk-D9-R5M">
                                 <rect key="frame" x="152" y="74" width="63" height="30"/>
                                 <state key="normal" title="Numbers"/>
+                                <connections>
+                                    <action selector="numbersTapped:" destination="xHI-J9-V0D" eventType="touchUpInside" id="yLf-pi-6kC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYa-s5-erc">
                                 <rect key="frame" x="240" y="74" width="55" height="30"/>
                                 <state key="normal" title="Todos"/>
+                                <connections>
+                                    <action selector="todosButton:" destination="xHI-J9-V0D" eventType="touchUpInside" id="fee-fe-hgA"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbp-t3-Qsr">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbp-t3-Qsr">
                                 <rect key="frame" x="25" y="134" width="325" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="325" id="MDb-GL-hEq"/>
+                                    <constraint firstAttribute="width" constant="335" id="MDb-GL-hEq"/>
                                     <constraint firstAttribute="height" constant="400" id="aSU-af-KRD"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -174,7 +182,7 @@
                             <constraint firstItem="a7X-tP-vth" firstAttribute="top" secondItem="Ndg-50-MeB" secondAttribute="bottom" constant="10" id="Bn3-Jt-Fk4"/>
                             <constraint firstItem="gbp-t3-Qsr" firstAttribute="top" secondItem="LJk-D9-R5M" secondAttribute="bottom" constant="30" id="HoR-9i-cRz"/>
                             <constraint firstItem="gbp-t3-Qsr" firstAttribute="centerX" secondItem="h3B-zo-B2G" secondAttribute="centerX" id="SyH-aR-u1m"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gbp-t3-Qsr" secondAttribute="trailing" constant="25" id="UtI-aJ-szM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gbp-t3-Qsr" secondAttribute="trailing" constant="20" id="UtI-aJ-szM"/>
                             <constraint firstItem="IYa-s5-erc" firstAttribute="centerY" secondItem="LJk-D9-R5M" secondAttribute="centerY" id="YZO-l5-akg"/>
                             <constraint firstItem="LJk-D9-R5M" firstAttribute="leading" secondItem="a7X-tP-vth" secondAttribute="trailing" constant="25" id="hi6-Kt-g7S"/>
                             <constraint firstItem="a7X-tP-vth" firstAttribute="leading" secondItem="h3B-zo-B2G" secondAttribute="leadingMargin" constant="64" id="iZb-V4-NWd"/>
@@ -182,7 +190,7 @@
                             <constraint firstItem="IYa-s5-erc" firstAttribute="baseline" secondItem="LJk-D9-R5M" secondAttribute="baseline" id="mx1-zQ-pBb"/>
                             <constraint firstItem="LJk-D9-R5M" firstAttribute="baseline" secondItem="a7X-tP-vth" secondAttribute="baseline" id="n1I-4h-AOp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IYa-s5-erc" secondAttribute="trailing" constant="64" id="oZD-hH-dRp"/>
-                            <constraint firstItem="gbp-t3-Qsr" firstAttribute="leading" secondItem="h3B-zo-B2G" secondAttribute="leadingMargin" constant="25" id="t60-wZ-y20"/>
+                            <constraint firstItem="gbp-t3-Qsr" firstAttribute="leading" secondItem="h3B-zo-B2G" secondAttribute="leadingMargin" constant="20" id="t60-wZ-y20"/>
                             <constraint firstItem="LJk-D9-R5M" firstAttribute="centerY" secondItem="a7X-tP-vth" secondAttribute="centerY" id="wHK-ay-Gnh"/>
                         </constraints>
                         <variation key="default">
@@ -194,6 +202,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="The List Name" id="vTu-zs-a8t"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bulletButton" destination="a7X-tP-vth" id="eyY-Yp-bef"/>
+                        <outlet property="listTextView" destination="gbp-t3-Qsr" id="VJn-rC-BmU"/>
+                        <outlet property="numbersButton" destination="LJk-D9-R5M" id="Qj3-uU-nMH"/>
+                        <outlet property="todosButton" destination="IYa-s5-erc" id="kFK-oS-HET"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7m-e7-KMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

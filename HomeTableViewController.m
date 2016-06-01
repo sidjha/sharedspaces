@@ -22,10 +22,7 @@
                               @[@"Kim", @"Kylie", @"Kourtney"],
                              @[@"Barack", @"George", @"Donald"], nil];
     
-    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-
-    
 }
 
 - (void)didReceiveMemoryWarning {
