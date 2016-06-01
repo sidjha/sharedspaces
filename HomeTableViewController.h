@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HomeTableViewController.h
 //  sharedspace
 //
 //  Created by Sid Jha on 2016-06-01.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface HomeTableViewController : UITableViewController
 
+@property (nonatomic, assign) NSArray *sharedspaces;
 
 @end
-
