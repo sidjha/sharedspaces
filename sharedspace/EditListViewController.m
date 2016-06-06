@@ -26,7 +26,17 @@ NSString * mode;
     
     
     self.listTextView.text = @"\u2022 ";
+    
+    
+    UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(closePage)];
+    
+    self.navigationItem.leftBarButtonItem = closeButton;
 }
+
+- (void) closePage {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+    
 - (IBAction)bulletsTapped:(id)sender {
     // TODO: switch TextView to bullets
 

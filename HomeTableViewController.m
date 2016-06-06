@@ -43,14 +43,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SharedspaceItem" forIndexPath:indexPath];
+
     
-    // Configure the cell...
-    
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:0];
-    imageView.frame = CGRectMake(0, 0, 30, 30);
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:2];
+    //imageView.frame = CGRectMake(0, 0, 30, 30);
     imageView.image = [UIImage imageNamed:@"ss_avatar"];
+    imageView.layer.borderWidth = 1.0f;
+    imageView.layer.borderColor = [UIColor blackColor].CGColor;
+    imageView.layer.cornerRadius = 30;
+    imageView.layer.masksToBounds = YES;
     
+    imageView.clipsToBounds = YES;
+    
+    
+    // TODO: override label with one that can have padding.. https://gist.github.com/marcoarment/2596057
     UILabel *label = (UILabel *)[cell viewWithTag:1];
+    label.layer.borderWidth = 1.0f;
+    label.layer.borderColor = [UIColor blackColor].CGColor;
+    
+    label.layer.cornerRadius = 5;
+    
     
     // shuffle through sharedspace array and make strings out of each item,
     // like @[@"Tom", @"Dick", @"Harry"] --> "Sharedspace with Tom, Dick and Harry]
