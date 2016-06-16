@@ -20,12 +20,20 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     // TODO: add in ability to switch sharedspace
-    
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(goBack)];
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)goBack {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -43,7 +51,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listsItem" forIndexPath:indexPath];
     
-    UILabel *label = (UILabel *)[cell viewWithTag:0];
+    UILabel *label = (UILabel *)[cell viewWithTag:1];
     label.text = @"Some list some list some list";
     
     // TODO: make these cells links to the actual list

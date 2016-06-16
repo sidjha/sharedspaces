@@ -24,13 +24,17 @@ NSString * mode;
     
     self.listTextView.delegate = self;
     
-    
     self.listTextView.text = @"\u2022 ";
-    
     
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(closePage)];
     
     self.navigationItem.leftBarButtonItem = closeButton;
+    
+    self.bulletButton.layer.borderWidth = 1.0f;
+    self.bulletButton.layer.borderColor = [UIColor blueColor].CGColor;
+    self.bulletButton.layer.cornerRadius = 5.0f;
+    self.bulletButton.layer.backgroundColor = [UIColor blueColor].CGColor;
+    self.bulletButton.tintColor = [UIColor whiteColor];
 }
 
 - (void) closePage {
@@ -38,13 +42,11 @@ NSString * mode;
 }
     
 - (IBAction)bulletsTapped:(id)sender {
-    // TODO: switch TextView to bullets
 
     [self switchModeToBullets];
 }
 
 - (IBAction)numbersTapped:(id)sender {
-    // TODO: switch TextView to numbers
     
     [self switchModeToNumbers];
     
@@ -52,26 +54,61 @@ NSString * mode;
 
 - (IBAction)todosButton:(id)sender {
     // TODO: switch TextView to todos
-    
     [self switchModeToTodos];
-    
 }
 
 - (void) switchModeToBullets {
-    mode = @"bullets";
+    self.bulletButton.layer.borderWidth = 1.0f;
+    self.bulletButton.layer.borderColor = [UIColor blueColor].CGColor;
+    self.bulletButton.layer.cornerRadius = 5.0f;
+    self.bulletButton.layer.backgroundColor = [UIColor blueColor].CGColor;
+    self.bulletButton.tintColor = [UIColor whiteColor];
     
+    self.numbersButton.layer.borderWidth = 0.0f;
+    self.numbersButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.numbersButton.tintColor = [UIColor blackColor];
+    
+    self.todosButton.layer.borderWidth = 0.0f;
+    self.todosButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.todosButton.tintColor = [UIColor blackColor];
+    
+    mode = @"bullets";
 }
 
 - (void) switchModeToNumbers {
+    self.numbersButton.layer.borderWidth = 1.0f;
+    self.numbersButton.layer.borderColor = [UIColor blueColor].CGColor;
+    self.numbersButton.layer.cornerRadius = 5.0f;
+    self.numbersButton.layer.backgroundColor = [UIColor blueColor].CGColor;
+    self.numbersButton.tintColor = [UIColor whiteColor];
     
+    self.bulletButton.layer.borderWidth = 0.0f;
+    self.bulletButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.bulletButton.tintColor = [UIColor blackColor];
+    
+    self.todosButton.layer.borderWidth = 0.0f;
+    self.todosButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.todosButton.tintColor = [UIColor blackColor];
+
     mode = @"numbers";
-    
 }
 
 - (void) switchModeToTodos {
+    self.todosButton.layer.borderWidth = 1.0f;
+    self.todosButton.layer.borderColor = [UIColor blueColor].CGColor;
+    self.todosButton.layer.cornerRadius = 5.0f;
+    self.todosButton.layer.backgroundColor = [UIColor blueColor].CGColor;
+    self.todosButton.tintColor = [UIColor whiteColor];
+    
+    self.numbersButton.layer.borderWidth = 0.0f;
+    self.numbersButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.numbersButton.tintColor = [UIColor blackColor];
+    
+    self.bulletButton.layer.borderWidth = 0.0f;
+    self.bulletButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.bulletButton.tintColor = [UIColor blackColor];
     
     mode = @"todos";
-    
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
