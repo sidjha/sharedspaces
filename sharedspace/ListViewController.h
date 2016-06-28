@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *navCollectionView;
 @property (nonatomic, strong) NSArray *listTitles;
+@property (nonatomic, assign) int activeList;
 
 @end

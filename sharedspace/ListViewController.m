@@ -23,6 +23,8 @@
     self.navCollectionView.dataSource = self;
     
     self.listTitles = [NSArray arrayWithObjects:@"Ideas", @"Interesting companies", @"Architecture", @"Hello", @"Places", nil];
+    
+    self.activeList = 1;
 
     [self.navCollectionView reloadData];
     
@@ -40,10 +42,16 @@
         label = [[UILabel alloc] initWithFrame:cell.bounds];
         label.tag = 99;
         label.text = [self.listTitles objectAtIndex:indexPath.row];
-        label.textColor = [UIColor whiteColor];
+        if (indexPath.row == self.activeList) {
+            label.textColor = [UIColor whiteColor];
+            label.font = [UIFont systemFontOfSize:14.0f weight:UIFontWeightBold];
+        } else {
+            label.font = [UIFont systemFontOfSize:14.0f weight:UIFontWeightRegular];
+            label.textColor = [UIColor colorWithWhite: 0.70 alpha:1];
+        }
+        
         [label sizeToFit];
         
-        //TODO: set bounds of UILabel
         //TODO: set text style of UILabel
         [cell.contentView addSubview:label];
     }
@@ -59,8 +67,7 @@
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(0, 100, 0, 0);
 }
- 
- */
+*/
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     
@@ -87,7 +94,7 @@
     
     //s = CGSizeMake(100.0, 20.0);
     
-    s = CGSizeMake(label.intrinsicContentSize.width, label.intrinsicContentSize.height);
+    s = CGSizeMake(label.intrinsicContentSize.width, 30.0);
     
     NSLog(@"Width of cell: %f, height of cell: %f", s.width, s.height);
     return s;
