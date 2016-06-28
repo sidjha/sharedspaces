@@ -49,7 +49,6 @@ NSString * mode;
 - (IBAction)numbersTapped:(id)sender {
     
     [self switchModeToNumbers];
-    
 }
 
 - (IBAction)todosButton:(id)sender {
@@ -116,7 +115,12 @@ NSString * mode;
     // TODO: modify condition to check for flags for bullet/numbers/todos
     
     if ([text isEqualToString:@"\n"]) {
-        
+        /* everything here only executes when there is an explicit new line character..
+         but won't execute if there are no NEW newline characters.. so previous items
+         stay the same. need some reference to line 0 of list.
+         
+         
+         */
         if ([mode isEqualToString:@"bullets"]) {
             
             if (range.location == textView.text.length) {
