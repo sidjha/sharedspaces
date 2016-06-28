@@ -42,13 +42,16 @@
         label = [[UILabel alloc] initWithFrame:cell.bounds];
         label.tag = 99;
         label.text = [self.listTitles objectAtIndex:indexPath.row];
-        if (indexPath.row == self.activeList) {
+        /*if (indexPath.row == self.activeList) {
             label.textColor = [UIColor whiteColor];
             label.font = [UIFont systemFontOfSize:14.0f weight:UIFontWeightBold];
         } else {
-            label.font = [UIFont systemFontOfSize:14.0f weight:UIFontWeightRegular];
+            label.font = [UIFont systemFontOfSize:14.0f weight:UIFontWeightBold];
             label.textColor = [UIColor colorWithWhite: 0.70 alpha:1];
-        }
+        } */
+        
+        label.font = [UIFont systemFontOfSize:14.0f weight:UIFontWeightBold];
+        label.textColor = [UIColor colorWithWhite: 0.70 alpha:1];
         
         [label sizeToFit];
         
@@ -98,6 +101,29 @@
     
     NSLog(@"Width of cell: %f, height of cell: %f", s.width, s.height);
     return s;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // update the currently active list
+    self.activeList = indexPath.row;
+    
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    UILabel *label = (UILabel *)[cell viewWithTag:99];
+    
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont systemFontOfSize:14.0f weight:UIFontWeightBold];
+    
+    //TODO: update cell size to fit new font
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    UILabel *label = (UILabel *)[cell viewWithTag:99];
+    
+    label.textColor = [UIColor colorWithWhite: 0.70 alpha:1];
+    label.font = [UIFont systemFontOfSize:14.0f weight:UIFontWeightBold];
 }
 
 - (void)didReceiveMemoryWarning {
