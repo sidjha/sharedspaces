@@ -11,7 +11,9 @@
 @interface ListViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *navCollectionView;
+@property (weak, nonatomic) IBOutlet UIView *listContainerView;
 @property (nonatomic, strong) NSArray *listTitles;
 @property (nonatomic, assign) int activeList;
+
 
 @end

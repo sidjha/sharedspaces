@@ -115,6 +115,9 @@
     label.font = [UIFont systemFontOfSize:14.0f weight:UIFontWeightBold];
     
     //TODO: update cell size to fit new font
+    
+    //TODO: switch view
+    [self switchViews];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -124,6 +127,10 @@
     
     label.textColor = [UIColor colorWithWhite: 0.70 alpha:1];
     label.font = [UIFont systemFontOfSize:14.0f weight:UIFontWeightBold];
+}
+
+- (void) switchViews {
+    // Do nothing
 }
 
 - (void)didReceiveMemoryWarning {
