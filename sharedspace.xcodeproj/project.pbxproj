@@ -15,8 +15,6 @@
 		EB7FCC721CFF303000E1B21F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB7FCC701CFF303000E1B21F /* LaunchScreen.storyboard */; };
 		EB7FCC7D1CFF303000E1B21F /* sharedspaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC7C1CFF303000E1B21F /* sharedspaceTests.m */; };
 		EB7FCC881CFF303000E1B21F /* sharedspaceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC871CFF303000E1B21F /* sharedspaceUITests.m */; };
-		EB7FCC9D1CFF414C00E1B21F /* ListsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC9C1CFF414C00E1B21F /* ListsTableViewController.m */; };
-		EB7FCCA01CFF53BA00E1B21F /* EditListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FCC9F1CFF53BA00E1B21F /* EditListViewController.m */; };
 		EBD77B0A1D1E538B0076B5F1 /* SSListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD77B091D1E538B0076B5F1 /* SSListTableViewController.m */; };
 		EBD77B0C1D1E57DB0076B5F1 /* OpenSourceLibraries.md in Resources */ = {isa = PBXBuildFile; fileRef = EBD77B0B1D1E57DB0076B5F1 /* OpenSourceLibraries.md */; };
 /* End PBXBuildFile section */
@@ -55,10 +53,6 @@
 		EB7FCC831CFF303000E1B21F /* sharedspaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sharedspaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7FCC871CFF303000E1B21F /* sharedspaceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sharedspaceUITests.m; sourceTree = "<group>"; };
 		EB7FCC891CFF303000E1B21F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB7FCC9B1CFF414C00E1B21F /* ListsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsTableViewController.h; sourceTree = "<group>"; };
-		EB7FCC9C1CFF414C00E1B21F /* ListsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsTableViewController.m; sourceTree = "<group>"; };
-		EB7FCC9E1CFF53BA00E1B21F /* EditListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditListViewController.h; sourceTree = "<group>"; };
-		EB7FCC9F1CFF53BA00E1B21F /* EditListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditListViewController.m; sourceTree = "<group>"; };
 		EBD77B081D1E538B0076B5F1 /* SSListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSListTableViewController.h; sourceTree = "<group>"; };
 		EBD77B091D1E538B0076B5F1 /* SSListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSListTableViewController.m; sourceTree = "<group>"; };
 		EBD77B0B1D1E57DB0076B5F1 /* OpenSourceLibraries.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OpenSourceLibraries.md; sourceTree = "<group>"; };
@@ -120,10 +114,6 @@
 				EBD77B091D1E538B0076B5F1 /* SSListTableViewController.m */,
 				EB4E40911D23162600EE0E21 /* ListViewController.h */,
 				EB4E40921D23162600EE0E21 /* ListViewController.m */,
-				EB7FCC9B1CFF414C00E1B21F /* ListsTableViewController.h */,
-				EB7FCC9C1CFF414C00E1B21F /* ListsTableViewController.m */,
-				EB7FCC9E1CFF53BA00E1B21F /* EditListViewController.h */,
-				EB7FCC9F1CFF53BA00E1B21F /* EditListViewController.m */,
 				EB7FCC6E1CFF303000E1B21F /* Assets.xcassets */,
 				EB7FCC701CFF303000E1B21F /* LaunchScreen.storyboard */,
 				EB7FCC731CFF303000E1B21F /* Info.plist */,
@@ -292,9 +282,7 @@
 				EB7FCC671CFF303000E1B21F /* AppDelegate.m in Sources */,
 				EBD77B0A1D1E538B0076B5F1 /* SSListTableViewController.m in Sources */,
 				EB4E40931D23162600EE0E21 /* ListViewController.m in Sources */,
-				EB7FCCA01CFF53BA00E1B21F /* EditListViewController.m in Sources */,
 				EB7FCC641CFF303000E1B21F /* main.m in Sources */,
-				EB7FCC9D1CFF414C00E1B21F /* ListsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

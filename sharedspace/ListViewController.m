@@ -13,6 +13,9 @@
 
 @end
 
+NSString * mode; // mode - bullets/numbers/todos
+int counter;
+
 @implementation ListViewController
 
 - (void)viewDidLoad {
@@ -24,10 +27,21 @@
     
     self.listTitles = [NSArray arrayWithObjects:@"Ideas", @"Interesting companies", @"Architecture", @"Hello", @"Places", nil];
     
+    
+    self.listTextView.delegate = self;
+    self.listTextView.text = @"\u2022 ";
+    
     self.activeList = 1;
 
+   // self.navCollectionView.contentInset.top = max((self.navCollectionView.frame.height - self.navCollectionView.contentSize.height) / 2, 0)
     [self.navCollectionView reloadData];
     
+    self.bulletsButton.layer.borderWidth = 1.0f;
+    self.bulletsButton.layer.borderColor = [UIColor blueColor].CGColor;
+    self.bulletsButton.layer.cornerRadius = 5.0f;
+    self.bulletsButton.layer.backgroundColor = [UIColor blueColor].CGColor;
+    self.bulletsButton.tintColor = [UIColor whiteColor];
+
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -131,6 +145,176 @@
 
 - (void) switchViews {
     // Do nothing
+}
+
+- (IBAction)bulletsTapped:(id)sender {
+    
+    [self switchModeToBullets];
+}
+
+- (IBAction)numbersTapped:(id)sender {
+    
+    [self switchModeToNumbers];
+}
+
+- (IBAction)todosButton:(id)sender {
+    // TODO: switch TextView to todos
+    [self switchModeToTodos];
+}
+
+- (void) switchModeToBullets {
+    self.bulletsButton.layer.borderWidth = 1.0f;
+    self.bulletsButton.layer.borderColor = [UIColor blueColor].CGColor;
+    self.bulletsButton.layer.cornerRadius = 5.0f;
+    self.bulletsButton.layer.backgroundColor = [UIColor blueColor].CGColor;
+    self.bulletsButton.tintColor = [UIColor whiteColor];
+    
+    self.numbersButton.layer.borderWidth = 0.0f;
+    self.numbersButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.numbersButton.tintColor = [UIColor blackColor];
+    
+    self.todosButton.layer.borderWidth = 0.0f;
+    self.todosButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.todosButton.tintColor = [UIColor blackColor];
+    
+    mode = @"bullets";
+}
+
+- (void) switchModeToNumbers {
+    self.numbersButton.layer.borderWidth = 1.0f;
+    self.numbersButton.layer.borderColor = [UIColor blueColor].CGColor;
+    self.numbersButton.layer.cornerRadius = 5.0f;
+    self.numbersButton.layer.backgroundColor = [UIColor blueColor].CGColor;
+    self.numbersButton.tintColor = [UIColor whiteColor];
+    
+    self.bulletsButton.layer.borderWidth = 0.0f;
+    self.bulletsButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.bulletsButton.tintColor = [UIColor blackColor];
+    
+    self.todosButton.layer.borderWidth = 0.0f;
+    self.todosButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    self.todosButton.tintColor = [UIColor blackColor];
+    
+    mode = @"numbers";
+}
+
+- (void) switchModeToTodos {
+
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    // TODO: modify condition to check for flags for bullet/numbers/todos
+    
+    if ([text isEqualToString:@"\n"]) {
+        /* everything here only executes when there is an explicit new line character..
+         but won't execute if there are no NEW newline characters.. so previous items
+         stay the same. need some reference to line 0 of list.
+         
+         
+         */
+        if ([mode isEqualToString:@"bullets"]) {
+            
+            if (range.location == textView.text.length) {
+                // Simply add the newline and bullet point to the end
+                NSString *updatedText = [textView.text stringByAppendingString:@"\n\u2022 "];
+                [textView setText:updatedText];
+            }
+            
+            // Else if the replacement text is being added in the middle of
+            // the text view's text...
+            else {
+                
+                // Get the replacement range of the UITextView
+                UITextPosition *beginning = textView.beginningOfDocument;
+                UITextPosition *start = [textView positionFromPosition:beginning offset:range.location];
+                UITextPosition *end = [textView positionFromPosition:start offset:range.length];
+                UITextRange *textRange = [textView textRangeFromPosition:start toPosition:end];
+                
+                // Insert that newline character *and* a bullet point
+                // at the point at which the user inputted just the
+                // newline character
+                [textView replaceRange:textRange withText:@"\n\u2022 "];
+                
+                // Update the cursor position accordingly
+                NSRange cursor = NSMakeRange(range.location + @"\n\u2022 ".length, 0);
+                textView.selectedRange = cursor;
+                
+            }
+            // Then return "NO, don't change the characters in range" since
+            // you've just done the work already
+            return NO;
+            
+        } else if ([mode isEqualToString:@"numbers"]) {
+            if (range.location == textView.text.length) {
+                // Simply add the newline and bullet point to the end
+                NSString *updatedText = [textView.text stringByAppendingString:[NSString stringWithFormat:@"\n%d ", counter++]];
+                [textView setText:updatedText];
+            }
+            
+            // Else if the replacement text is being added in the middle of
+            // the text view's text...
+            else {
+                
+                // Get the replacement range of the UITextView
+                UITextPosition *beginning = textView.beginningOfDocument;
+                UITextPosition *start = [textView positionFromPosition:beginning offset:range.location];
+                UITextPosition *end = [textView positionFromPosition:start offset:range.length];
+                UITextRange *textRange = [textView textRangeFromPosition:start toPosition:end];
+                
+                // Insert that newline character *and* a bullet point
+                // at the point at which the user inputted just the
+                // newline character
+                [textView replaceRange:textRange withText:[NSString stringWithFormat:@"\n%d ", counter++]];
+                
+                NSString *str = [NSString stringWithFormat:@"\n%d ", counter];
+                // Update the cursor position accordingly
+                NSRange cursor = NSMakeRange(range.location + str.length, 0);
+                textView.selectedRange = cursor;
+                
+            }
+            // Then return "NO, don't change the characters in range" since
+            // you've just done the work already
+            return NO;
+            
+        } else {
+            if (range.location == textView.text.length) {
+                // Simply add the newline and bullet point to the end
+                NSString *updatedText = [textView.text stringByAppendingString:@"\n\u2022 "];
+                [textView setText:updatedText];
+            }
+            
+            // Else if the replacement text is being added in the middle of
+            // the text view's text...
+            else {
+                
+                // Get the replacement range of the UITextView
+                UITextPosition *beginning = textView.beginningOfDocument;
+                UITextPosition *start = [textView positionFromPosition:beginning offset:range.location];
+                UITextPosition *end = [textView positionFromPosition:start offset:range.length];
+                UITextRange *textRange = [textView textRangeFromPosition:start toPosition:end];
+                
+                // Insert that newline character *and* a bullet point
+                // at the point at which the user inputted just the
+                // newline character
+                [textView replaceRange:textRange withText:@"\n\u2022 "];
+                
+                // Update the cursor position accordingly
+                NSRange cursor = NSMakeRange(range.location + @"\n\u2022 ".length, 0);
+                textView.selectedRange = cursor;
+                
+            }
+            // Then return "NO, don't change the characters in range" since
+            // you've just done the work already
+            return NO;
+            
+        }
+        
+    }
+    
+    // Else return yes
+    return YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
